@@ -129,7 +129,7 @@ app.get('/', (req, res, next) => {
 
     let files = []
     try {
-        fs.readdirSync("./videos").forEach(file => {
+        fs.readdirSync(__dirname + "/videos").forEach(file => {
             files.push(file)
         });
         return res.render('index', {
