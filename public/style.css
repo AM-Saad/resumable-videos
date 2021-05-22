@@ -1,3 +1,13 @@
+@import url(//cdn.rawgit.com/rtaibah/dubai-font-cdn/master/dubai-font.css);
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 h1 {
   font-size: 20px;
@@ -5,25 +15,37 @@ h1 {
   color: #fff;
 }
 
-.none{
+a, a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+.none {
   display: none !important;
 }
-.block{ display: block ;}
-.wrapper{
+
+.block {
+  display: block;
+}
+
+.wrapper {
   width: 50%;
   margin: auto;
   display: block;
   padding: 10px;
   margin: 10px auto;
 }
+
 #uploads {
   margin: auto;
   display: block;
   padding: 20px;
   background: #f9f9f9;
-  border: 1px solid #ff8800;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
-#uploads div{
+
+#uploads div {
   padding: 5px;
   background-color: #eee;
   margin: 10px 0;
@@ -31,14 +53,15 @@ h1 {
   align-items: center;
   justify-content: space-between;
 }
-#uploads div .delete{
+
+#uploads div .delete {
   background-color: red;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
-  text-decoration: none;
   padding: 5px;
 }
+
 .wrap {
   border-radius: 4px;
   background-color: #2e4261;
@@ -54,6 +77,7 @@ h1 {
   font-size: 1.0625rem;
   font-weight: 600;
 }
+
 .file__input, .file__value {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
@@ -61,10 +85,12 @@ h1 {
   color: rgba(255, 255, 255, 0.3);
   padding: 0.9375rem 1.0625rem;
 }
+
 .file__input--file {
   position: absolute;
   opacity: 0;
 }
+
 .file__input--label {
   display: flex;
   justify-content: space-between;
@@ -72,6 +98,7 @@ h1 {
   margin-bottom: 0;
   cursor: pointer;
 }
+
 .file__input--label:after {
   content: attr(data-text-btn);
   border-radius: 3px;
@@ -82,28 +109,34 @@ h1 {
   color: white;
   cursor: pointer;
 }
+
 .file__value {
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: rgba(255, 255, 255, 0.809);
 }
+
 .file__value:hover:after {
   color: white;
 }
+
 .file__value:after {
   content: "X";
   cursor: pointer;
 }
+
 .file__value:after:hover {
   color: white;
 }
+
 .file__remove {
   display: block;
   width: 20px;
   height: 20px;
   border: 1px solid #000;
 }
+
 .progress-bar {
   --progressbar-color: rgb(255, 255, 255);
   --progress-color: rgba(104, 255, 149, 1);
@@ -148,7 +181,7 @@ h1 {
 
 .progress-bar .box p {
   position: absolute;
-  top: -10px;
+  top: 5px;
   left: 0;
   color: #333;
   text-align: center;
@@ -216,7 +249,7 @@ h1 {
   color: #eee;
 }
 
-#UploadButton{
+#UploadButton {
   border: 0;
   border-radius: 3px;
   background-color: #ff9445;
@@ -230,8 +263,19 @@ h1 {
   margin: auto;
 }
 
-@media only screen and (max-width: 767px) and (min-width: 320px){
-  .wrapper{
+.footer-copyright {
+  background-color: #ff9445;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  color: #333;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 320px) {
+  .wrapper {
     width: 90%;
   }
 }
