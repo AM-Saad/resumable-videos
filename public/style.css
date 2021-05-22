@@ -1,0 +1,226 @@
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.none{
+  display: none !important;
+}
+.block{ display: block ;}
+.wrapper{
+  width: 50%;
+  margin: auto;
+  display: block;
+  padding: 10px;
+  margin: 10px auto;
+}
+#uploads {
+  margin: auto;
+  display: block;
+  padding: 20px;
+  background: #f9f9f9;
+  border: 1px solid #ff8800;
+}
+#uploads a{
+  padding: 5px;
+  background-color: #eee;
+  margin: 10px 0;
+}
+.wrap {
+  border-radius: 4px;
+  background-color: #2e4261;
+  box-shadow: 0 1px 2px 0 #c9ced1;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  min-height: 40vh;
+}
+
+.file {
+  position: relative;
+  max-width: 100%;
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+.file__input, .file__value {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  margin-bottom: 0.875rem;
+  color: rgba(255, 255, 255, 0.3);
+  padding: 0.9375rem 1.0625rem;
+}
+.file__input--file {
+  position: absolute;
+  opacity: 0;
+}
+.file__input--label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+.file__input--label:after {
+  content: attr(data-text-btn);
+  border-radius: 3px;
+  background-color: #536480;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.18);
+  padding: 0.9375rem 1.0625rem;
+  margin: -0.9375rem -1.0625rem;
+  color: white;
+  cursor: pointer;
+}
+.file__value {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.809);
+}
+.file__value:hover:after {
+  color: white;
+}
+.file__value:after {
+  content: "X";
+  cursor: pointer;
+}
+.file__value:after:hover {
+  color: white;
+}
+.file__remove {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+}
+.progress-bar {
+  --progressbar-color: rgb(255, 255, 255);
+  --progress-color: rgba(104, 255, 149, 1);
+  --progress: 0;
+  --box-side-height: 6px;
+  position: relative;
+  width: 100%;
+  height: 75px;
+  perspective: 200px;
+  margin: 15px 0;
+}
+
+.progress-bar .box {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background: var(--progressbar-color);
+  transform-style: preserve-3d;
+  transform: rotateX(0);
+  transition: transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: rotateX( 12deg);
+  border-radius: 3px;
+  margin: auto;
+}
+
+.progress-bar.done .box {
+  transform: rotateX(0);
+}
+
+.progress-bar .box-front {
+  position: absolute;
+  background: #b9b8b8;
+  width: 100%;
+  height: 22px;
+  left: 0;
+  bottom: 0;
+  transform-origin: center bottom;
+  transform: rotateX( 95deg);
+  transition: transform 1s;
+  border-radius: 3px;
+}
+
+.progress-bar .box p {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  color: #333;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  line-height: 100%;
+  z-index: 99;
+  transition: opacity 1s, visibility 1s;
+}
+
+.progress-bar.done .box p.loading-text {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.progress-bar:not(.done) .box p.done-text {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.progress-bar .box-bottom {
+  position: absolute;
+  background: #111;
+  opacity: 0.4;
+  width: 100%;
+  height: var(--box-side-height);
+  left: 0;
+  bottom: 0;
+  transform-origin: center bottom;
+  transform: translateZ(-30px);
+  transition: transform 1s;
+  filter: blur(10px);
+}
+
+.progress-bar .box::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--progress-color);
+  transform-origin: top left;
+  transform: scaleX(var(--progress));
+  transition: transform 0.1s;
+  box-shadow: 0px 0px 17px 3px rgb(0 255 35 / 71%);
+  border-radius: 3px;
+}
+
+.progress-bar .box-front::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--progress-color);
+  opacity: .3;
+  transform-origin: top left;
+  transform: scaleX(var(--progress));
+  transition: transform 0.1s;
+  box-shadow: 0px 0px 20px rgba(100, 255, 121, 0.4);
+  border-radius: 3px;
+}
+
+.mb {
+  margin: 10px;
+  font-size: 19px;
+  color: #eee;
+}
+
+#UploadButton{
+  border: 0;
+  border-radius: 3px;
+  background-color: #ff9445;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 18%);
+  padding: 0.9375rem 1.0625rem;
+  margin: -0.9375rem -1.0625rem;
+  color: white;
+  cursor: pointer;
+  /* float: right; */
+  display: block;
+  margin: auto;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 320px){
+  .wrapper{
+    width: 90%;
+  }
+}

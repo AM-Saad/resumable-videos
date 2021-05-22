@@ -1,0 +1,22 @@
+{
+  "name": "video_uploader",
+  "version": "1.0.0",
+  "description": "Video uploader with socket.io",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "start:dev": "nodemon app.js"
+  },
+  "author": "Abdelrhamn Mohammed (AMS-Studio)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "socket.io": "^2.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

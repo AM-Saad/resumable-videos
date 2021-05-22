@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css">
+    <title> Video Uploader</title>
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+
+        <div class="wrap">
+            <h1>Video Uploader</h1>
+
+            <form action="#" name="form" method="get">
+                <div class="file">
+                    <div class="file__input" id="file__input">
+                        <input class="file__input--file" id="FileBox" type="file" name="files[]" />
+                        <label class="file__input--label" for="FileBox" data-text-btn="Choose">Add File:</label>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="box">
+                        <p class="loading-text">Loading <span id="percent">:0</span>%</p>
+                        <p class="done-text">Video Successfully Uploaded 🎉</p>
+                        <div class="box-front"></div>
+                        <div class="box-bottom"></div>
+                    </div>
+                    <div class="mb">0/0MB</div>
+                </div>
+                <div class=" none">
+                    <input class="item_inputs_control" type="hidden" id="NameBox">
+                </div>
+                <span id='UploadArea'>
+                </span>
+                <button type='button' id='UploadButton' class='Button btn btn-success'>Upload</button>
+            </form>
+        </div>
+
+        <div id="uploads">
+            <h2>Uploaded Videos</h2>
+            <% if(files.length> 0){ %>
+                <% for(file of files){ %>
+                    <a class="block" href="/videos/<%=file%>">
+                        <%=file%>
+                    </a>
+                    <%}%>
+                        <%}else{ %>
+                            <p>No Videos Uploaded Yet..</p>
+                            <%}%>
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.4.0/socket.io.js"></script>
+
+    <!-- <script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script> -->
+
+    <script src="/video_interface.js"></script>
+
+
+</body>
+
+</html>
