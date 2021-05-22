@@ -72,7 +72,6 @@ io.of('/video').on("connection", socket => {
                 var out = fs.createWriteStream(__dirname + "/videos/" + Name);
                 inp.pipe(out);
                 inp.on("end", function () {
-
                     // Operation done
                     fs.unlinkSync(__dirname + "/temp/" + Name);
                     socket.emit('Done', { 'Image': 'videos/' + Name + '.jpg', path: "videos/" + Name });
@@ -128,19 +127,19 @@ app.use(cors()) // Use this after the variable declaration
 app.get('/', (req, res, next) => {
 
     let files = []
-    try {
-        fs.readdirSync(__dirname + "/videos").forEach(file => {
-            files.push(file)
-        });
-        return res.render('index', {
-            files: files
-        })
-    } catch (error) {
-        if (!error.statusCode) {
-            error.statusCode = 500;
-        }
-        next(error);
-    }
+    // try {
+
+    //     fs.readdirSync(__dirname + '/videos').forEach(file => files.push(file));
+
+    //     return res.render('index', {
+    //         files: files
+    //     })
+    // } catch (error) {
+    //     if (!error.statusCode) {
+    //         error.statusCode = 500;
+    //     }
+    //     next(error);
+    // }
 })
 
 
