@@ -128,13 +128,10 @@ app.get('/', (req, res, next) => {
 
     let files = []
     try {
-        const rp = process.cwd()
-        console.log(rp + '/videos');
-        fs.readdirSync(rp + '/videos').forEach(file => files.push(file));
+        const relative_path = process.cwd()
+        fs.readdirSync(relative_path + '/videos').forEach(file => files.push(file));
 
-        return res.render('index', {
-            files: files
-        })
+        return res.render('index', { files: files })
     } catch (error) {
         if (!error.statusCode) {
             error.statusCode = 500;
@@ -143,6 +140,14 @@ app.get('/', (req, res, next) => {
     }
 })
 
+app.get('/delete/:name', (req, res, next) => {
+    const name = req.params.name
+    const relative_path = process.cwd()
+
+    fs.unlinkSync(relative_path + "/videos/" + name);
+    return res.redirect('/')
+
+})
 
 
 

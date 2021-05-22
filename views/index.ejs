@@ -47,9 +47,12 @@
             <h2>Uploaded Videos</h2>
             <% if(files.length> 0){ %>
                 <% for(file of files){ %>
-                    <a class="block" href="/videos/<%=file%>">
-                        <%=file%>
-                    </a>
+                    <div>
+                        <a class="block" href="/videos/<%=file%>">
+                            <%=file%>
+                        </a>
+                        <a class="delete" href="/delete/<%=file%>">Delete</a>
+                    </div>
                     <%}%>
                         <%}else{ %>
                             <p>No Videos Uploaded Yet..</p>
