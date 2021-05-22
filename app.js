@@ -131,9 +131,9 @@ app.get('/', (req, res, next) => {
 
     //     fs.readdirSync(__dirname + '/videos').forEach(file => files.push(file));
 
-    //     return res.render('index', {
-    //         files: files
-    //     })
+    return res.render('index', {
+        files: files
+    })
     // } catch (error) {
     //     if (!error.statusCode) {
     //         error.statusCode = 500;
