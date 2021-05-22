@@ -9,10 +9,10 @@ const { exec } = require('child_process');
 
 const app = express();
 
-// const server = app.listen(process.env.PORT || 3000);
-var http = require('http').Server(app);
+const server = app.listen(process.env.PORT || 3000);
+// var http = require('http').Server(app);
 
-const io = require('./socket').init(http)
+const io = require('./socket').init(server)
 console.log('connected');
 
 
@@ -146,8 +146,4 @@ app.get('/', (req, res, next) => {
 
 
 
-let port = process.env.PORT || 3000
 
-http.listen(port, function () {
-    console.log('listening on *:80');
-});
