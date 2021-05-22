@@ -114,10 +114,10 @@ app.set("views", "views");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "public")));
 
 app.use('/videos', express.static(path.join(__dirname, 'videos')));
 app.use('/temp', express.static(path.join(__dirname, 'temp')));
+app.use(express.static(path.join(__dirname, "public")));
 
 
 app.set('socketio', io);
@@ -127,19 +127,20 @@ app.use(cors()) // Use this after the variable declaration
 app.get('/', (req, res, next) => {
 
     let files = []
-    // try {
+    try {
+        const rp = process.cwd()
+        console.log(rp + '/videos');
+        fs.readdirSync(rp + '/videos').forEach(file => files.push(file));
 
-    //     fs.readdirSync(__dirname + '/videos').forEach(file => files.push(file));
-
-    return res.render('index', {
-        files: files
-    })
-    // } catch (error) {
-    //     if (!error.statusCode) {
-    //         error.statusCode = 500;
-    //     }
-    //     next(error);
-    // }
+        return res.render('index', {
+            files: files
+        })
+    } catch (error) {
+        if (!error.statusCode) {
+            error.statusCode = 500;
+        }
+        next(error);
+    }
 })
 
 
